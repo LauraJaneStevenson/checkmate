@@ -18,12 +18,13 @@ def check(king, queen):
     }
 
     
-    print(f"difference in number {int(king[1]) - int(queen[1])}")
-    print(f"difference in letters {columns[king[0]] - columns[queen[0]]}")
+    # return true if king and queen are in the same row or column
     if king[0] == queen[0] or king[1] == queen[1]:
 
         return True
 
+    # return true if the queen is diagonal to the king by checking if difference 
+    # between rows is = to difference between columns
     elif abs(int(king[1]) - int(queen[1])) == abs(columns[king[0]] - columns[queen[0]]):
 
         return True 
@@ -33,7 +34,7 @@ def check(king, queen):
 
 
 
-
+# positions to check
 print(check("D6", "H6"))
 print("\n")
 
