@@ -7,45 +7,56 @@ def check(king, queen):
     """
     # dictionary to store the value of the columns 
     columns = {
-    	'A' : 1,
-    	'B' : 2,
-    	'C' : 3,
-    	'D' : 4,
-    	'E' : 5,
-    	'F' : 6,
-    	'G' : 7,
-    	'H' : 8
+        'A' : 1,
+        'B' : 2,
+        'C' : 3,
+        'D' : 4,
+        'E' : 5,
+        'F' : 6,
+        'G' : 7,
+        'H' : 8
     }
 
+    
+    print(f"difference in number {int(king[1]) - int(queen[1])}")
+    print(f"difference in letters {columns[king[0]] - columns[queen[0]]}")
     if king[0] == queen[0] or king[1] == queen[1]:
 
-    	return True
+        return True
 
-    elif int(king[1]) - int(queen[1]) == columns[king[0]] - columns[queen[0]]:
+    elif abs(int(king[1]) - int(queen[1])) == abs(columns[king[0]] - columns[queen[0]]):
 
-    	return True 
+        return True 
 
     return False
 
 
 
 
+
 print(check("D6", "H6"))
+print("\n")
 
 
 print(check("E6", "E4"))
+print("\n")
 
 
 print(check("B7", "D5"))
+print("\n")
 
 
 print(check("A1", "H8"))
+print("\n")
 
 
 print(check("A8", "H1"))
+print("\n")
 
 
 print(check("D6", "H7"))
+print("\n")
 
 
 print(check("E6", "F4"))
+print("\n")
